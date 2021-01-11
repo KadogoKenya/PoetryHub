@@ -2,21 +2,32 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import UserRegistrationForm, UserUpdateForm, ProfileUpdateForm
 from django.contrib.auth.decorators import login_required
+import sweetify
 
-from rest_framework import generics, permissions, mixins
-from rest_framework.response import Response
+# from rest_framework import generics, permissions, mixins
+# from rest_framework.response import Response
 # from .serializer import RegisterSerializer, UserSerializer
 from django.contrib.auth.models import User
-
+from sweetify.views import SweetifySuccessMixin
 
 # Create your views here.
+# class TestUpdateView(SweetifySuccessMixin, UpdateView):
+#     model = TestModel
+#     fields = ['text']
+#     success_message = 'TestModel successfully updated!'
+
+
 def register(request):
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
+
+            sweetify.success(request, 'You did it', text='Good job! You successfully showed a SweetAlert message', persistent='Hell yeah')
+            
             messages.success(request, f'Account has been created.You can now log in.')
+
             return redirect('login')
     else:
         form = UserRegistrationForm()
@@ -32,7 +43,12 @@ def profile(request):
         if u_form.is_valid() and p_form.is_valid():
             u_form.save()
             p_form.save()
+
+            sweetify.success(request, 'You did it', text='Good job! You successfully showed a SweetAlert message', persistent='Hell yeah')
+
             messages.success(request, f'Account has been updated')
+
+
             return redirect('display_profile')
     else:
         u_form = UserUpdateForm(instance=request.user)
