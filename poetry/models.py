@@ -49,6 +49,15 @@ class Famous(models.Model):
         return f'{self.title} Famous'
 
 
+class Anger(models.Model):
+    title=models.CharField(max_length=20)
+    post = models.TextField()
+    pub_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.title} Anger'
+
+
 class Friendship(models.Model):
     title=models.CharField(max_length=20)
     post = models.TextField()

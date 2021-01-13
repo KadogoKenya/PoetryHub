@@ -4,18 +4,18 @@ from poetry.models import Love,Spiritual,Anger,Death,Family,Famous,Friendship,Ho
 
 # Register your models here.
 
-admin.models.register(Love)
+admin.site.register(Love)
 
-admin.models.register(Spiritual)
-admin.models.register(Anger)
-admin.models.register(Death)
-admin.models.register(Friendship)
-admin.models.register(Famous)
-admin.models.register(Family)
-admin.models.register(Holiday)
-admin.models.register(Life)
-admin.models.register(Nature)
-admin.models.register(Sad)
-admin.models.register(Coronavirus)
-admin.models.register(Christian)
+admin.site.register(Spiritual)
+admin.site.register(Anger)
+admin.site.register(Death)
+admin.site.register(Friendship)
+admin.site.register(Famous)
+admin.site.register(Family)
+admin.site.register(Holiday)
+admin.site.register(Life)
+admin.site.register(Nature)
+admin.site.register(Sad)
+admin.site.register(Coronavirus)
+admin.site.register(Christian)
 
