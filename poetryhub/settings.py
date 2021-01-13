@@ -38,6 +38,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'crispy_forms',
     'bootstrap4',
+    'tinymce',
     'sweetify',
     'cloudinary_storage',
     'cloudinary',
