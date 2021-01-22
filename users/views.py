@@ -10,11 +10,6 @@ import sweetify
 from django.contrib.auth.models import User
 from sweetify.views import SweetifySuccessMixin
 
-# Create your views here.
-# class TestUpdateView(SweetifySuccessMixin, UpdateView):
-#     model = TestModel
-#     fields = ['text']
-#     success_message = 'TestModel successfully updated!'
 
 
 def register(request):
@@ -24,9 +19,10 @@ def register(request):
             form.save()
             username = form.cleaned_data.get('username')
 
-            sweetify.success(request, 'You did it', text='Good job! You successfully showed a SweetAlert message', persistent='Hell yeah')
+            # sweetify.success(request, 'You did it', text='Good job! You successfully showed a SweetAlert message', persistent='Hell yeah')
             
-            messages.success(request, f'Account has been created.You can now log in.')
+            # messages.success(request, f'Account has been created.You can now log in.')
+            success_message = 'TestModel successfully updated!'
 
             return redirect('login')
     else:
@@ -44,9 +40,10 @@ def profile(request):
             u_form.save()
             p_form.save()
 
-            sweetify.success(request, 'You did it', text='Good job! You successfully showed a SweetAlert message', persistent='Hell yeah')
+            # sweetify.success(request, 'You did it', text='Good job! You successfully showed a SweetAlert message', persistent='Hell yeah')
 
-            messages.success(request, f'Account has been updated')
+            # messages.success(request, f'Account has been updated')
+            success_message = 'TestModel successfully updated!'
 
 
             return redirect('display_profile')

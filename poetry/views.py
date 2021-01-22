@@ -18,8 +18,11 @@ def index(request):
 @login_required(login_url='/login/')
 def lovePoems(request):
     
-    love=Love.objects.all()
-    lovep=love[::-1]
+    lovePoems=Love.objects.all()
+    lovePoems=lovePoems[::-1]
 
-    return render(request,'poetry/poetry.html',context)
+    context={  
+        'lovePoems':lovePoems, 
+    }
+    return render(request,'poetry/lovePoems.html', context)
 
