@@ -5,7 +5,7 @@ from django.shortcuts import get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.decorators import login_required
 from poetry.models import Love,Spiritual,Anger,Death,Family,Famous,Friendship,Holiday,Life,Nature,Sad,Christian,Coronavirus
-
+from poetry.forms import NewAngerForm,NewChristianForm,NewCoronavirusForm,NewDeathForm,NewFamilyForm,NewFamousForm,NewFriendshipForm,NewHolidayForm,NewLifeForm,NewLoveForm,NewNatureForm,NewSadForm,NewSpiritualForm
 
 
 # Create your views here.
@@ -25,6 +25,31 @@ def lovePoems(request):
         'lovePoems':lovePoems, 
     }
     return render(request,'poetry/lovePoems.html', context)
+
+@login_required(login_url='/login/')
+def lovePoems_entry(request):
+    title='Add Love Poem'
+    form = NewLoveForm(request.POST or None)
+    current_user = request.user
+    profile = request.user.profile
+
+    if request.method == 'POST':
+        
+        form = ComputerForm(request.POST, request.FILES)
+        if form.is_valid():
+            lovePoems = form.save(commit=False)
+            lovePoems.Admin = current_user
+            lovePoems.admin_profile = profile
+            lovePoems.save()
+
+            messages.success(request,'Successfully saved')
+        return redirect('lovePoems')
+
+    else:
+        
+        form = NewLovePoem()
+
+    return render(request,'poetry/lovePoems.html',{"form":form})
 
 @login_required(login_url='/login/')
 def angerPoems(request):
@@ -48,6 +73,8 @@ def christianPoems(request):
         'christianPoems':christianPoems, 
     }
     return render(request,'poetry/christianPoems.html', context)
+
+
 
 
 @login_required(login_url='/login/')
