@@ -35,7 +35,7 @@ def lovePoems_entry(request):
 
     if request.method == 'POST':
         
-        form = ComputerForm(request.POST, request.FILES)
+        form = NewLoveForm(request.POST, request.FILES)
         if form.is_valid():
             lovePoems = form.save(commit=False)
             lovePoems.Admin = current_user
@@ -47,7 +47,7 @@ def lovePoems_entry(request):
 
     else:
         
-        form = NewLovePoem()
+        form = NewLoveForm()
 
     return render(request,'poetry/lovePoems.html',{"form":form})
 
@@ -60,7 +60,7 @@ def angerPoems(request):
     context={  
         'angerPoems':angerPoems, 
     }
-    return render(request,'poetry/angerPoems.html', context)
+    return render(request,'poetry/angerPoems_entry.html', context)
 
 
 @login_required(login_url='/login/')

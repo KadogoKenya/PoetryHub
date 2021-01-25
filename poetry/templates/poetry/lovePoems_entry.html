@@ -1,0 +1,27 @@
+{% extends 'poetry/base.html' %}
+{% load cloudinary %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<!-- <div class="container-fluid p-5" style="background-image: url('/media/image6.jpg'); width: 100%; height: 800px; color: white"> -->
+
+    <div class="jumbotron p-5" >
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button type="submit" class="btn btn-sm btn-info ">New Love Poem</button>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <img src="/poetry/image/image1.jpg" class="w3-circle" style="width: 100%; height: 400px;">
+            </div>
+        </div>
+        
+    </div>
+
+<!-- </div> -->
+
+{% endblock %}
