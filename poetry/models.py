@@ -4,6 +4,7 @@ import cloudinary
 import cloudinary.uploader
 from cloudinary.models import CloudinaryField
 from datetime import datetime, date
+from tinymce.models import HTMLField
 
 
 # Create your models here.
@@ -11,7 +12,7 @@ from datetime import datetime, date
 class Spiritual(models.Model):
     image = cloudinary.models.CloudinaryField('profile_pics', default='https://unsplash.com/photos/zhgj7ZEUf1w')
     title=models.CharField(max_length=20)
-    post = models.TextField()
+    post = HTMLField()
     pub_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -20,7 +21,7 @@ class Spiritual(models.Model):
 class Love(models.Model):
     image = cloudinary.models.CloudinaryField('profile_pics', default='https://unsplash.com/photos/zhgj7ZEUf1w') 
     title=models.CharField(max_length=20)
-    post = models.TextField()
+    post = HTMLField()
     pub_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -29,7 +30,7 @@ class Love(models.Model):
 class Death(models.Model):
     image = cloudinary.models.CloudinaryField('profile_pics', default='https://unsplash.com/photos/zhgj7ZEUf1w') 
     title=models.CharField(max_length=20)
-    post = models.TextField()
+    post = HTMLField()
     pub_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -38,7 +39,7 @@ class Death(models.Model):
 class Family(models.Model):
     image = cloudinary.models.CloudinaryField('profile_pics', default='https://unsplash.com/photos/zhgj7ZEUf1w') 
     title=models.CharField(max_length=20)
-    post = models.TextField()
+    post = HTMLField()
     pub_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -47,7 +48,7 @@ class Family(models.Model):
 class Famous(models.Model):
     image = cloudinary.models.CloudinaryField('profile_pics', default='https://unsplash.com/photos/zhgj7ZEUf1w') 
     title=models.CharField(max_length=20)
-    post = models.TextField()
+    post = HTMLField()
     pub_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -57,7 +58,7 @@ class Famous(models.Model):
 class Anger(models.Model):
     image = cloudinary.models.CloudinaryField('profile_pics', default='https://unsplash.com/photos/zhgj7ZEUf1w')
     title=models.CharField(max_length=20)
-    post = models.TextField()
+    post = HTMLField()
     pub_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -67,7 +68,7 @@ class Anger(models.Model):
 class Friendship(models.Model):
     image = cloudinary.models.CloudinaryField('profile_pics', default='https://unsplash.com/photos/zhgj7ZEUf1w')
     title=models.CharField(max_length=20)
-    post = models.TextField()
+    post = HTMLField()
     pub_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -77,7 +78,7 @@ class Friendship(models.Model):
 class Holiday(models.Model):
     image = cloudinary.models.CloudinaryField('profile_pics', default='https://unsplash.com/photos/zhgj7ZEUf1w') 
     title=models.CharField(max_length=20)
-    post = models.TextField()
+    post = HTMLField()
     pub_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -87,7 +88,7 @@ class Holiday(models.Model):
 class Life(models.Model):
     image = cloudinary.models.CloudinaryField('profile_pics', default='https://unsplash.com/photos/zhgj7ZEUf1w') 
     title=models.CharField(max_length=20)
-    post = models.TextField()
+    post = HTMLField()
     pub_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -97,7 +98,7 @@ class Life(models.Model):
 class Nature(models.Model):
     image = cloudinary.models.CloudinaryField('profile_pics', default='https://unsplash.com/photos/zhgj7ZEUf1w') 
     title=models.CharField(max_length=20)
-    post = models.TextField()
+    post = HTMLField()
     pub_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -107,7 +108,7 @@ class Nature(models.Model):
 class Sad(models.Model):
     image = cloudinary.models.CloudinaryField('profile_pics', default='https://unsplash.com/photos/zhgj7ZEUf1w') 
     title=models.CharField(max_length=20)
-    post = models.TextField()
+    post = HTMLField()
     pub_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -117,7 +118,7 @@ class Sad(models.Model):
 class Coronavirus(models.Model):
     image = cloudinary.models.CloudinaryField('profile_pics', default='https://unsplash.com/photos/zhgj7ZEUf1w') 
     title=models.CharField(max_length=20)
-    post = models.TextField()
+    post = HTMLField()
     pub_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -127,7 +128,7 @@ class Coronavirus(models.Model):
 class Christian(models.Model):
     image = cloudinary.models.CloudinaryField('profile_pics', default='https://unsplash.com/photos/zhgj7ZEUf1w') 
     title=models.CharField(max_length=20)
-    post = models.TextField()
+    post = HTMLField()
     pub_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
