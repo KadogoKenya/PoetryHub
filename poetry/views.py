@@ -6,7 +6,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.decorators import login_required
 from poetry.models import Love,Spiritual,Anger,Death,Family,Famous,Friendship,Holiday,Life,Nature,Sad,Christian,Coronavirus
 from poetry.forms import NewAngerForm,NewChristianForm,NewCoronavirusForm,NewDeathForm,NewFamilyForm,NewFamousForm,NewFriendshipForm,NewHolidayForm,NewLifeForm,NewLoveForm,NewNatureForm,NewSadForm,NewSpiritualForm
-
+from django.contrib import messages
 
 # Create your views here.
 
@@ -42,12 +42,13 @@ def lovePoems_entry(request):
             lovePoems.admin_profile = profile
             lovePoems.save()
 
-            # messages.success(request,'Successfully saved')
+            messages.success(request,'Your poem has successifully being uploaded')
         return redirect('lovePoems')
 
     else:
         
         form = NewLoveForm()
+
 
     return render(request,'poetry/lovePoems_entry.html',{"form":form})
 
@@ -79,7 +80,7 @@ def angerPoems_entry(request):
             angerPoems.admin_profile = profile
             angerPoems.save()
 
-            # messages.success(request,'Successfully saved')
+            messages.success(request,'Successfully saved')
         return redirect('angerPoems')
 
     else:
@@ -117,7 +118,7 @@ def christianPoems_entry(request):
             christianPoems.admin_profile = profile
             christianPoems.save()
 
-            # messages.success(request,'Successfully saved')
+            messages.success(request,'Your poem has successifully being uploaded')
         return redirect('christianPoems')
 
     else:
@@ -154,7 +155,7 @@ def coronavirusPoems_entry(request):
             coronavirusPoems.admin_profile = profile
             coronavirusPoems.save()
 
-            # messages.success(request,'Successfully saved')
+            messages.success(request,'Your poem has successifully being uploaded')
         return redirect('coronavirusPoems')
 
     else:
@@ -192,7 +193,7 @@ def deathPoems_entry(request):
             deathPoems.admin_profile = profile
             deathPoems.save()
 
-            # messages.success(request,'Successfully saved')
+            messages.success(request,'Your poem has successifully being uploaded')
         return redirect('deathPoems')
 
     else:
@@ -231,7 +232,7 @@ def familyPoems_entry(request):
             familyPoems.admin_profile = profile
             familyPoems.save()
 
-            # messages.success(request,'Successfully saved')
+            messages.success(request,'Your poem has successifully being uploaded')
         return redirect('familyPoems')
 
     else:
@@ -269,7 +270,7 @@ def friendshipPoems_entry(request):
             friendshipPoems.admin_profile = profile
             friendshipPoems.save()
 
-            # messages.success(request,'Successfully saved')
+            messages.success(request,'Your poem has successifully being uploaded')
         return redirect('friendshipPoems')
 
     else:
@@ -309,7 +310,7 @@ def holidayPoems_entry(request):
             holidayPoems.admin_profile = profile
             holidayPoems.save()
 
-            # messages.success(request,'Successfully saved')
+            messages.success(request,'Your poem has successifully being uploaded')
         return redirect('holidayPoems')
 
     else:
@@ -346,7 +347,7 @@ def lifePoems_entry(request):
             lifePoems.admin_profile = profile
             lifePoems.save()
 
-            # messages.success(request,'Successfully saved')
+            messages.success(request,'Your poem has successifully being uploaded')
         return redirect('lifePoems')
 
     else:
@@ -383,7 +384,7 @@ def sadPoems_entry(request):
             sadPoems.admin_profile = profile
             sadPoems.save()
 
-            # messages.success(request,'Successfully saved')
+            messages.success(request,'Your poem has successifully being uploaded')
         return redirect('sadPoems')
 
     else:
@@ -420,7 +421,7 @@ def spiritualPoems_entry(request):
             spiritualPoems.admin_profile = profile
             spiritualPoems.save()
 
-            # messages.success(request,'Successfully saved')
+            messages.success(request,'Your poem has successifully being uploaded')
         return redirect('spiritualPoems')
 
     else:
@@ -458,7 +459,7 @@ def naturePoems_entry(request):
             naturePoems.admin_profile = profile
             naturePoems.save()
 
-            # messages.success(request,'Successfully saved')
+            messages.success(request,'Your poem has successifully being uploaded')
         return redirect('naturePoems')
 
     else:
