@@ -14,7 +14,6 @@ from django.contrib import messages
 def index(request):
     return render(request, 'poetry/index.html')
 
-
 @login_required(login_url='/login/')
 def lovePoems(request):
     
